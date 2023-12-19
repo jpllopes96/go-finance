@@ -1,3 +1,18 @@
+Postgres e Docker:
+ - Iniciar o docker e instalar o postgres:
+  - docker pull postgres:14-alpine
+- Rodar a imagem do docker conectando ao banco:
+  - docker run --name postgres -p 5433:5432 -e POSTGRES_PASSWORD=postgres -d postgres:14-alpine
+- executar o container:
+  - docker exec -it postgres sh
+  - psql -U postgres  -- \q to exit
+
+- Configurar no PGADMIN
+
+- criar a db com o comando dentro do postgres - docker exec -it ... não precisa executar o psql
+ - createdb --username=postgres --owner=postgres go_finance
+  
+
 Instalar o migrate cli: https://github.com/golang-migrate/migrate
     -Instalar o scope: https://scoop.sh/ rodando os comandos no powershell
         - Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -9,10 +24,10 @@ Comandos:
 //criar migrations
 migrate create -ext sql -dir db/migration -seq user_table
 //executar migrations
-migrate -path db/migration -database "postgresql://postgres:root@localhost:5432/go_finance?sslmode=disable" -verbose up
+migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5433/go_finance?sslmode=disable" -verbose up
 // executar down
 //executar migrations
-migrate -path db/migration -database "postgresql://postgres:root@localhost:5432/go_finance?sslmode=disable" -verbose up
+migrate -path db/migration -database "postgresql://postgres:postgres@localhost:5433/go_finance?sslmode=disable" -verbose down
 
 
 Instalar o psql https://docs.sqlc.dev/en/stable/overview/install.html

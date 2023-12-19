@@ -9,9 +9,9 @@ import (
 
 func createRandomUser(t *testing.T) User {
 	arg := CreateUserParams{
-		Username: "Test",
-		Password: "test123",
-		Email:    "test@email.com",
+		Username: "jplopes",
+		Password: "apsda134",
+		Email:    "email1@email.com",
 	}
 
 	user, err := testQueries.CreateUser(context.Background(), arg)
@@ -26,9 +26,8 @@ func createRandomUser(t *testing.T) User {
 	require.NotEmpty(t, user.CreatedAt)
 
 	return user
-
 }
 
-func Test_CreateUser(t *testing.T) {
+func TestCreateUser(t *testing.T) {
 	createRandomUser(t)
 }

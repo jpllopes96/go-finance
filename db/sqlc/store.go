@@ -1,8 +1,6 @@
 package db
 
-import (
-	"database/sql"
-)
+import "database/sql"
 
 type Store interface {
 	Querier

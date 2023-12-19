@@ -47,3 +47,5 @@ Instalar o psql https://docs.sqlc.dev/en/stable/overview/install.html
         - go get github.com/stretchr/testify
     - Criar o main_test.go dentro de sqlc para testar connec com banco
     - Criar o user_test e fazer os testes
+    - Criamos a o util/random para gerar strings aleatórias
+    - Testes de categorias

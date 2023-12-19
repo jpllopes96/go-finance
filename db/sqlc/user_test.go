@@ -2,6 +2,7 @@ package db
 
 import (
 	"context"
+	"go-finances/util"
 	"testing"
 
 	"github.com/stretchr/testify/require"
@@ -9,9 +10,9 @@ import (
 
 func createRandomUser(t *testing.T) User {
 	arg := CreateUserParams{
-		Username: "jplopes",
-		Password: "apsda134",
-		Email:    "email1@email.com",
+		Username: util.RandomString(6),
+		Password: "123456",
+		Email:    util.RandomEmail(),
 	}
 
 	user, err := testQueries.CreateUser(context.Background(), arg)
@@ -30,4 +31,34 @@ func createRandomUser(t *testing.T) User {
 
 func TestCreateUser(t *testing.T) {
 	createRandomUser(t)
+}
+
+func TestGetUser(t *testing.T) {
+	user1 := createRandomUser(t)
+	user2, err := testQueries.GetUser(context.Background(), user1.Username)
+
+	require.NoError(t, err)
+	require.NotEmpty(t, user2)
+
+	require.Equal(t, user1.Username, user2.Username)
+	require.Equal(t, user1.Password, user2.Password)
+	require.Equal(t, user1.Email, user2.Email)
+
+	require.NotEmpty(t, user2.CreatedAt)
+
+}
+
+func TestGetUserById(t *testing.T) {
+	user1 := createRandomUser(t)
+	user2, err := testQueries.GetUserById(context.Background(), user1.ID)
+
+	require.NoError(t, err)
+	require.NotEmpty(t, user2)
+
+	require.Equal(t, user1.Username, user2.Username)
+	require.Equal(t, user1.Password, user2.Password)
+	require.Equal(t, user1.Email, user2.Email)
+
+	require.NotEmpty(t, user2.CreatedAt)
+
 }

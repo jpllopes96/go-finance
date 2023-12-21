@@ -49,3 +49,4 @@ Instalar o psql https://docs.sqlc.dev/en/stable/overview/install.html
     - Criar o user_test e fazer os testes
     - Criamos a o util/random para gerar strings aleatórias
     - Testes de categorias
+    - Testes Accounts

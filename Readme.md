@@ -50,3 +50,5 @@ Instalar o psql https://docs.sqlc.dev/en/stable/overview/install.html
     - Criamos a o util/random para gerar strings aleatórias
     - Testes de categorias
     - Testes Accounts
+  - Github workflow - pipeline que roda os testes no github com workflow
+   - criar a paste .github/workflows quando sobe isso ele sabe que tem que trabalhar com a pipeline

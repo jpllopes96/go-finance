@@ -51,4 +51,16 @@ Instalar o psql https://docs.sqlc.dev/en/stable/overview/install.html
     - Testes de categorias
     - Testes Accounts
   - Github workflow - pipeline que roda os testes no github com workflow
-   - criar a paste .github/workflows quando sobe isso ele sabe que tem que trabalhar com a pipeline
+   - criar a pasta .github/workflows quando sobe isso ele sabe que tem que trabalhar com a pipeline
+   - criar o make file
+   - ao dar o comando push ele vai executar e testar o projeto, podemos ver no github em actions
+
+-- API
+ - GIN Framework - Instalar - go get -u github.com/gin-gonic/gin
+ - Criar pasta API e criar o server
+ - Criar as rotas do user e funcs do user
+ - criar o main go na raiz
+ - adicionar o server no make file
+
+
+

@@ -62,5 +62,9 @@ Instalar o psql https://docs.sqlc.dev/en/stable/overview/install.html
  - criar o main go na raiz
  - adicionar o server no make file
 
+ - Criar API da Category
+ - Criar API de Accounts
+ 
+
 
 

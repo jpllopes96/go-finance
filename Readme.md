@@ -64,7 +64,10 @@ Instalar o psql https://docs.sqlc.dev/en/stable/overview/install.html
 
  - Criar API da Category
  - Criar API de Accounts
- 
+ - Criar API dos graphs e reports
+
+- Variavel Ambinets .ENV
+  - https://github.com/joho/godotenv
 
 
 

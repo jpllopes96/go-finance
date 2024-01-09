@@ -69,5 +69,10 @@ Instalar o psql https://docs.sqlc.dev/en/stable/overview/install.html
 - Variavel Ambinets .ENV
   - https://github.com/joho/godotenv
 
+- Validações ao criar conta
+  - O tipo da categoria ser do mesmo tipo da conta
+
+- Criar o hash de senhas do user password
+
 
 

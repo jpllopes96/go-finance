@@ -114,6 +114,7 @@ func (server *Server) getCategories(ctx *gin.Context) {
 	err := ctx.ShouldBindJSON(&req)
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, errorResponse(err))
+		return
 	}
 
 	arg := db.GetCategoriesParams{

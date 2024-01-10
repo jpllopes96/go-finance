@@ -74,5 +74,11 @@ Instalar o psql https://docs.sqlc.dev/en/stable/overview/install.html
 
 - Criar o hash de senhas do user password
 
+- Melhorar os filtros
+ - fazer uma query para cada filtro no category and account para pegar o array(no arquivo sql)
+ - quando é string usa o Like que fica como "opcional" o valor mesmo send AND o %""% vai funcionar
+ - quando é INT32 e Data COALESCE(@category_id, a.category_id) vai retornar a cat ID se tiver valor ou true(empty) - Porem no GO isso não vem nulo
+ 
+
 
 

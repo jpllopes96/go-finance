@@ -2,6 +2,7 @@ package db
 
 import (
 	"context"
+	"database/sql"
 	"go-finances/util"
 	"testing"
 	"time"
@@ -95,9 +96,15 @@ func TestListAccount(t *testing.T) {
 	lastAccount := createRandomAccount(t)
 
 	arg := GetAccountsParams{
-		UserID:      lastAccount.UserID,
-		CategoryID:  lastAccount.CategoryID,
-		Date:        lastAccount.Date,
+		UserID: lastAccount.UserID,
+		CategoryID: sql.NullInt32{
+			Int32: lastAccount.CategoryID,
+			Valid: true,
+		},
+		Date: sql.NullTime{
+			Time:  lastAccount.Date,
+			Valid: true,
+		},
 		Type:        lastAccount.Type,
 		Title:       lastAccount.Title,
 		Description: lastAccount.Description,

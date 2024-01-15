@@ -16,6 +16,10 @@ type createCategoryRequest struct {
 }
 
 func (server *Server) createCategory(ctx *gin.Context) {
+	// errOnValidateTOken := middleware.GetTokenHeaderAndValidate(ctx)
+	// if errOnValidateTOken != nil {
+	// 	return
+	// }
 	var req createCategoryRequest
 	err := ctx.ShouldBindJSON(&req)
 	if err != nil {

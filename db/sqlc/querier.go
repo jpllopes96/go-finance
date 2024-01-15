@@ -21,6 +21,7 @@ type Querier interface {
 	GetCategories(ctx context.Context, arg GetCategoriesParams) ([]Category, error)
 	GetCategory(ctx context.Context, id int32) (Category, error)
 	GetUser(ctx context.Context, username string) (User, error)
+	GetUserByEmail(ctx context.Context, email string) (User, error)
 	GetUserById(ctx context.Context, id int32) (User, error)
 	UpdateAccount(ctx context.Context, arg UpdateAccountParams) (Account, error)
 	UpdateCategories(ctx context.Context, arg UpdateCategoriesParams) (Category, error)

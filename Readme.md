@@ -99,5 +99,8 @@ Instalar o psql https://docs.sqlc.dev/en/stable/overview/install.html
   
 -- Retornar o agent ID ao logar
 
+-- Alterar o find all para pegar os parametros por query string
+ --passa o form na struct e troca de should bind json para shouldBindQuery
+
 
 

@@ -16,6 +16,11 @@ type loginRequest struct {
 	Password string `json:"password" binding:"required"`
 }
 
+type loginResponse struct {
+	UserID int32  `json:"user_id"`
+	Token  string `json:"token"`
+}
+
 func (server *Server) login(ctx *gin.Context) {
 	var req loginRequest
 	err := ctx.ShouldBindJSON(&req)
@@ -59,5 +64,10 @@ func (server *Server) login(ctx *gin.Context) {
 	// ctx.SetSameSite(http.SameSiteLaxMode)
 	// ctx.SetCookie("Authorization", tokenString, 3600*30, "", "", false, true)
 
-	ctx.JSON(http.StatusOK, tokenString)
+	response := &loginResponse{
+		UserID: user.ID,
+		Token:  tokenString,
+	}
+
+	ctx.JSON(http.StatusOK, response)
 }

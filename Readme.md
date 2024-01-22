@@ -88,7 +88,16 @@ Instalar o psql https://docs.sqlc.dev/en/stable/overview/install.html
  - criar token
  - validar token
 
- 
+-- auto reload ao salvar - live reload
+  - https://github.com/cosmtrek/air
+ - go install github.com/cosmtrek/air@latest
+  - air init
+
+
+-- CORS para integrar com o frontend
+  - Proteção do backend para que outros dominios não acessem a api
+  
+-- Retornar o agent ID ao logar
 
 
 
